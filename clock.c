@@ -12,22 +12,27 @@ int main() {
     }
 
     while (1) {
-        s--;  // count down
-        if (s == 0) {
-            m--;
-            s = 0;
-        }
-        if ((m == 0) && (s == 0)) {
-            h--;
-            m = 0;
-        }
-
-        if (s < 0 || m < 0) {
+        if (s == 0 && m == 0 && h == 0) {
             printf("stoppppp!");
             return 0;
         }
+
         printf("%02d:%02d:%02d", h, m, s);  // form as 00:00:00
-        Sleep(delay);                       // delay the speed of loop excute
+        // count down
+        if (s > 0) {
+            s--;
+        } else if (s = 0 && m != 0) {
+            m--;
+            s = 59;
+        }
+
+        if ((m == 0) && (s == 0) && (h > 0)) {
+            h--;
+            m = 59;
+            s = 59;
+        }
+
+        Sleep(delay);  // delay the speed of loop excute
         system("cls");
     }
 }
