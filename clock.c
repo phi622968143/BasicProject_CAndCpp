@@ -21,7 +21,7 @@ int main() {
         // count down
         if (s > 0) {
             s--;
-        } else if (s = 0 && m != 0) {
+        } else if (s ==0 && m != 0) {//== is determination sign
             m--;
             s = 59;
         }
