@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//program to demo how bitwise can use to convert num sys. 
 int main()
 {
   int decimal_num, c, result;
@@ -8,12 +8,13 @@ int main()
   scanf("%d", &decimal_num);
   
   for (c = 31; c >= 0; c--)
-  {
-    result = decimal_num >> c;//shift to the bit inorder
-    //using & to check 0 or 1 
-    //1 mean 00000000 00000000 00000000 00000001 in 32 bits
+  { //shift to the bit inorder(print leftest bit first)
+    result = decimal_num >> c;
+    
+    // using & to check 0 or 1 
+    // 1 mean 00000000 00000000 00000000 00000001 in 32 bits
     // so if result do AND only affect the last bit which makes true or false value.
-    //also check cs of fundementl chapter 4.
+    // also check fundation of cs chapter 4.
     if (result & 1)
       printf("1");
     else
