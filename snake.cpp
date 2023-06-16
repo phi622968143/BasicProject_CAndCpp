@@ -116,7 +116,7 @@ void Logic()
     // Set the first variable of the tails to the current position
     tailX[0] = x;
     tailY[0] = y;
-    // Shift every element at position `i` to position `i+1`
+    // Shift every element at position `i-1` to position `i`, starting from i=1
     for (int i = 1; i < nTail; i++) {
         // This looks like:
         //
@@ -125,7 +125,7 @@ void Logic()
         // c = a;
         //
         // This cascading type of assignment is a swap between a and b.
-        // This would swap tail[i] with tail[i+1], starting from i=1 up to i = nTail-1
+        // This would swap tail[i-1] with tail[i], starting from i=1
         prev2X   = tailX[i];
         prev2Y   = tailY[i];
         tailX[i] = prevX;
